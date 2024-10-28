@@ -11,6 +11,7 @@ import java.util.concurrent.TimeUnit;
 public class BasePage {
     public static final int ELEMENT_VISIBILITY_DELAY = 60;
     public static final int SHORT_WAIT = 2000;
+    public static final int TIMEOUT = 3000;
 
     protected WebDriver driver;
 

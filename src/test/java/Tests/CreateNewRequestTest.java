@@ -61,4 +61,20 @@ class CreateNewRequestTest {
         createNewRequestPage.clickOnStatusOperation("Edit");
         createNewRequestPage.clickOnStatusOperation("Cancel");
     }
+
+    @Test
+    @Order(6)
+    public void createNewRequest() {
+        this.searchForStartDate();
+        createNewRequestPage.createNewRequest("New request");
+        createNewRequestPage.entreTheDate("startdate");
+        createNewRequestPage.entreMonthOrYear("selectMonth","Nov");
+        createNewRequestPage.entreMonthOrYear("selectYear","2024");
+        createNewRequestPage.entreDataMonth("8");
+        createNewRequestPage.entreTheDate("enddate");
+        createNewRequestPage.entreMonthOrYear("selectMonth","Nov");
+        createNewRequestPage.entreMonthOrYear("selectYear","2024");
+        createNewRequestPage.entreDataMonth("9");
+        createNewRequestPage.clickOnStatusOperation("Cancel");
+    }
 }

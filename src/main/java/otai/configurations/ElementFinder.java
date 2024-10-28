@@ -26,5 +26,23 @@ public class ElementFinder {
         return By.xpath("//*/a[contains(text(),'" + statusOperationLabel + "')]");
     }
 
+    public static By requestOperationButton(String requestOperationLabel) {
+        return By.xpath("//*/div/a[2][contains(text(),'" + requestOperationLabel + "')]");
+    }
 
+    public static By inputDate(String dateType) {
+        return By.xpath("//input[@class='hasDatepicker'][contains(@id,'" + dateType + "')]");
+    }
+
+    public static By dataMonth(String dataMonthValue) {
+        return By.xpath("//a[text()='" + dataMonthValue + "']");
+    }
+
+    public static By monthOrYearDataHandler(String dataHandler) {
+        return By.xpath("//*/option[contains(text(),'" + dataHandler + "')]");
+    }
+
+    public static By monthOrYearLabel(String monthOrYearLabel) {
+        return By.xpath("//select[@data-handler='" + monthOrYearLabel + "']");
+    }
 }
