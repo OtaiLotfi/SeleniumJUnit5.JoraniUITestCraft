@@ -59,10 +59,12 @@ public class HRReportsTest {
 
     @Test
     @Order(5)
-    public void chooseTheYear() {
+    public void chooseTheYear() throws InterruptedException {
         hrReportsPage.selectTheYear("2023");
         hrReportsPage.clickTheExecuteButton();
+        hrReportsPage.scrollThePage();
         hrReportsPage.selectTheYear("2024");
         hrReportsPage.clickTheExecuteButton();
+        hrReportsPage.scrollThePage();
     }
 }

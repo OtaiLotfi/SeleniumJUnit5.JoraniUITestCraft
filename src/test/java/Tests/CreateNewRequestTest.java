@@ -78,7 +78,7 @@ class CreateNewRequestTest {
     @Test
     @Order(8)
     public void enterStartDateRequest() {
-        createNewRequestPage.entreTheDate("startdate");
+        createNewRequestPage.enterTheDate("startdate");
         createNewRequestPage.entreMonthOrYear("selectMonth","Dec");
         createNewRequestPage.entreMonthOrYear("selectYear","2024");
         createNewRequestPage.entreDataMonth("8");
@@ -87,7 +87,7 @@ class CreateNewRequestTest {
     @Test
     @Order(9)
     public void enterEndDateRequest() {
-        createNewRequestPage.entreTheDate("enddate");
+        createNewRequestPage.enterTheDate("enddate");
         createNewRequestPage.entreMonthOrYear("selectMonth","Dec");
         createNewRequestPage.entreMonthOrYear("selectYear","2024");
         createNewRequestPage.entreDataMonth("9");

@@ -50,7 +50,7 @@ public class CreateNewRequestPage extends BasePage {
         return leaveTypeFieldLabel;
     }
 
-    public void entreTheDate(String dateType) {
+    public void enterTheDate(String dateType) {
         By dateTypeXpath = ElementFinder.inputDate(dateType);
         this.waitVisibilityOfElement(dateTypeXpath, ELEMENT_VISIBILITY_DELAY);
         WebElement dateTypeInput = driver.findElement(dateTypeXpath);
@@ -62,6 +62,7 @@ public class CreateNewRequestPage extends BasePage {
         By monthOrYearXpath = ElementFinder.monthOrYearLabel(monthOrYearLabel);
         this.waitVisibilityOfElement(monthOrYearXpath, ELEMENT_VISIBILITY_DELAY);
         WebElement field = driver.findElement(monthOrYearXpath);
+        this.waitMillis(SHORT_WAIT);
         field.click();
         this.waitMillis(SHORT_WAIT);
         this.chooseMonthOrYear(dataHandler).click();

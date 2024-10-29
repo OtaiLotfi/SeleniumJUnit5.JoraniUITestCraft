@@ -53,7 +53,18 @@ public class ElementFinder {
     public static By itemLabel(String itemLabelValue) {
         return By.xpath("//a[contains(text(), '" + itemLabelValue + "')]/../a");
     }
-    //a[text()='HR ']/../a
-    //a[contains(text(),'(example) Leave type distribution')]/../a
+
+    public static By rowsAndColumns(String rowsOrColumnsLabel) {
+        return By.xpath("//a/span[text()='" + rowsOrColumnsLabel + "']");
+    }
+
+    public static By buttonsPageLengthAndColvis(String buttonClassName) {
+        return By.xpath("//a[contains(@class, '" + buttonClassName + "')]");
+    }
+
+    public static By dateHired(String inputId) {
+        return By.xpath("//input[@id='" + inputId + "']");
+    }
+
 
 }

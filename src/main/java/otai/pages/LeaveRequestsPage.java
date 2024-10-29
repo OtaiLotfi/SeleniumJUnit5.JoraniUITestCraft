@@ -78,20 +78,6 @@ public class LeaveRequestsPage extends BasePage {
         return optionField;
     }
 
-    public void scrollThePage() throws InterruptedException {
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-
-        for (int i = 0; i < 10; i++) {
-            js.executeScript("window.scrollBy(0, 1000)");
-            Thread.sleep(500);
-        }
-
-        for (int i = 0; i < 10; i++) {
-            js.executeScript("window.scrollBy(0, -1000)");
-            Thread.sleep(500);
-        }
-    }
-
     public void checkFilterStatusCheckbox(String label) {
         this.waitVisibilityOfElement(ElementFinder.filterStatusCheckBox(label), ELEMENT_VISIBILITY_DELAY);
         WebElement typeField = driver.findElement(ElementFinder.filterStatusCheckBox(label));

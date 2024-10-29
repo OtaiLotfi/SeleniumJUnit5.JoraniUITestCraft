@@ -1,7 +1,7 @@
 package otai.pages;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -30,5 +30,31 @@ public class BasePage {
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
         }
+    }
+
+    public void scrollThePage() throws InterruptedException {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+
+        for (int i = 0; i < 10; i++) {
+            js.executeScript("window.scrollBy(0, 1000)");
+            Thread.sleep(100);
+        }
+
+        for (int i = 0; i < 10; i++) {
+            js.executeScript("window.scrollBy(0, -1000)");
+            Thread.sleep(100);
+        }
+    }
+
+    public void clickOnAWhiteSpace() {
+        this.waitMillis(SHORT_WAIT);
+        Actions action = new Actions(driver);
+        action.sendKeys(Keys.ESCAPE).perform();
+    }
+
+    public void leftClickOutsidePopup() {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("document.elementFromPoint(100, 100).click();");
+        this.waitMillis(100);
     }
 }
