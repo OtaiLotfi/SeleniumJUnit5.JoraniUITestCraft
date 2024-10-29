@@ -67,12 +67,28 @@ class CreateNewRequestTest {
     public void createNewRequest() {
         this.searchForStartDate();
         createNewRequestPage.createNewRequest("New request");
+    }
+
+    @Test
+    @Order(7)
+    public void chooseLeaveType() {
+        createNewRequestPage.chooseLeaveType("Telework");
+    }
+
+    @Test
+    @Order(8)
+    public void enterStartDateRequest() {
         createNewRequestPage.entreTheDate("startdate");
-        createNewRequestPage.entreMonthOrYear("selectMonth","Nov");
+        createNewRequestPage.entreMonthOrYear("selectMonth","Dec");
         createNewRequestPage.entreMonthOrYear("selectYear","2024");
         createNewRequestPage.entreDataMonth("8");
+    }
+
+    @Test
+    @Order(9)
+    public void enterEndDateRequest() {
         createNewRequestPage.entreTheDate("enddate");
-        createNewRequestPage.entreMonthOrYear("selectMonth","Nov");
+        createNewRequestPage.entreMonthOrYear("selectMonth","Dec");
         createNewRequestPage.entreMonthOrYear("selectYear","2024");
         createNewRequestPage.entreDataMonth("9");
         createNewRequestPage.clickOnStatusOperation("Cancel");

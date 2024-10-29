@@ -13,6 +13,9 @@ public class CreateNewRequestPage extends BasePage {
     public CreateNewRequestPage(WebDriver driver){
         super(driver);
     }
+
+    private final By selectionArrowForLeaveType = By.xpath("//span[contains(@class,'select2-selection__arrow')]/b");
+
     public void clickOnStatusOperation(String statusOperationLabel) {
         this.waitMillis(SHORT_WAIT);
         By statusOperationXpath = ElementFinder.statusOperationName(statusOperationLabel);
@@ -30,11 +33,28 @@ public class CreateNewRequestPage extends BasePage {
         this.waitMillis(SHORT_WAIT);
     }
 
+    public void chooseLeaveType(String leaveTypeLabel) {
+        this.waitVisibilityOfElement(selectionArrowForLeaveType, ELEMENT_VISIBILITY_DELAY);
+        WebElement selectionArrowButton = driver.findElement(selectionArrowForLeaveType);
+        selectionArrowButton.click();
+        this.waitMillis(SHORT_WAIT);
+        this.selectLeaveType(leaveTypeLabel).click();
+    }
+
+    public WebElement selectLeaveType(String leaveTypeLabel) {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        By leaveTypeLabelXpath = ElementFinder.leaveType(leaveTypeLabel);
+        this.waitVisibilityOfElement(leaveTypeLabelXpath, ELEMENT_VISIBILITY_DELAY);
+        WebElement leaveTypeFieldLabel = driver.findElement(leaveTypeLabelXpath);
+        js.executeScript("arguments[0].scrollIntoView(true);", leaveTypeFieldLabel);
+        return leaveTypeFieldLabel;
+    }
+
     public void entreTheDate(String dateType) {
         By dateTypeXpath = ElementFinder.inputDate(dateType);
         this.waitVisibilityOfElement(dateTypeXpath, ELEMENT_VISIBILITY_DELAY);
         WebElement dateTypeInput = driver.findElement(dateTypeXpath);
-        this.waitMillis(SHORT_WAIT);
+        //this.waitMillis(SHORT_WAIT);
         dateTypeInput.click();
     }
 

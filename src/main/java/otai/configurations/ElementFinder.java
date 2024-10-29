@@ -45,4 +45,10 @@ public class ElementFinder {
     public static By monthOrYearLabel(String monthOrYearLabel) {
         return By.xpath("//select[@data-handler='" + monthOrYearLabel + "']");
     }
+
+    public static By leaveType(String leaveType) {
+        return By.xpath("//ul/li[contains(text(), '" + leaveType + "')]");
+    }
+
+
 }
