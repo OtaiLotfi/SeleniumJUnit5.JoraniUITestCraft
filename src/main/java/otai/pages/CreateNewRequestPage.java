@@ -54,7 +54,7 @@ public class CreateNewRequestPage extends BasePage {
         By dateTypeXpath = ElementFinder.inputDate(dateType);
         this.waitVisibilityOfElement(dateTypeXpath, ELEMENT_VISIBILITY_DELAY);
         WebElement dateTypeInput = driver.findElement(dateTypeXpath);
-        //this.waitMillis(SHORT_WAIT);
+        this.waitMillis(SHORT_WAIT);
         dateTypeInput.click();
     }
 

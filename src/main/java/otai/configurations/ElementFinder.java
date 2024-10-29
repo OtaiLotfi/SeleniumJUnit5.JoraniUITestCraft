@@ -50,5 +50,10 @@ public class ElementFinder {
         return By.xpath("//ul/li[contains(text(), '" + leaveType + "')]");
     }
 
+    public static By itemLabel(String itemLabelValue) {
+        return By.xpath("//a[contains(text(), '" + itemLabelValue + "')]/../a");
+    }
+    //a[text()='HR ']/../a
+    //a[contains(text(),'(example) Leave type distribution')]/../a
 
 }
