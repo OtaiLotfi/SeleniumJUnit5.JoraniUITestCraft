@@ -4,10 +4,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class ElementFinder {
-    private WebDriver driver;
 
     public ElementFinder(WebDriver driver) {
-        this.driver = driver;
     }
 
     public static By typeLabel(String typeLabel) {
@@ -65,6 +63,4 @@ public class ElementFinder {
     public static By dateHired(String inputId) {
         return By.xpath("//input[@id='" + inputId + "']");
     }
-
-
 }
