@@ -81,7 +81,7 @@ public class HRListOfEmployeesTest {
     @Order(8)
     public void enterTheFirstHiringDate() {
         hrListOfEmployeesPage.clickOnTheDateHired("viz_datehired1");
-        createNewRequestPage.entreMonthOrYear("selectMonth","Oct");
+        createNewRequestPage.entreMonthOrYear("selectMonth", "Oct");
         createNewRequestPage.entreDataMonth("8");
     }
 
@@ -89,9 +89,7 @@ public class HRListOfEmployeesTest {
     @Order(9)
     public void enterTheSecondHiringDate() {
         hrListOfEmployeesPage.clickOnTheDateHired("viz_datehired2");
-        createNewRequestPage.entreMonthOrYear("selectMonth","Oct");
+        createNewRequestPage.entreMonthOrYear("selectMonth", "Oct");
         createNewRequestPage.entreDataMonth("18");
     }
-
-
 }

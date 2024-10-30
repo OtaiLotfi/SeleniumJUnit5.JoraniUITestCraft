@@ -9,7 +9,7 @@ import otai.configurations.ElementFinder;
 @Component
 
 public class HRListOfEmployeesPage extends BasePage {
-    public HRListOfEmployeesPage(WebDriver driver){
+    public HRListOfEmployeesPage(WebDriver driver) {
         super(driver);
     }
 
@@ -36,5 +36,4 @@ public class HRListOfEmployeesPage extends BasePage {
         this.waitMillis(SHORT_WAIT);
         dateHiredInput.click();
     }
-    //input[@id='viz_datehired1']
 }

@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 @Component
 
 public class CreateNewRequestPage extends BasePage {
-    public CreateNewRequestPage(WebDriver driver){
+    public CreateNewRequestPage(WebDriver driver) {
         super(driver);
     }
 
@@ -62,7 +62,6 @@ public class CreateNewRequestPage extends BasePage {
         By monthOrYearXpath = ElementFinder.monthOrYearLabel(monthOrYearLabel);
         this.waitVisibilityOfElement(monthOrYearXpath, ELEMENT_VISIBILITY_DELAY);
         WebElement field = driver.findElement(monthOrYearXpath);
-        this.waitMillis(SHORT_WAIT);
         field.click();
         this.waitMillis(SHORT_WAIT);
         this.chooseMonthOrYear(dataHandler).click();

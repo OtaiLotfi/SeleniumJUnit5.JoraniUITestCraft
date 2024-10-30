@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
+
 @Component
 public class LeaveRequestsPage extends BasePage {
     public LeaveRequestsPage(WebDriver driver) {
@@ -91,7 +92,7 @@ public class LeaveRequestsPage extends BasePage {
         List<String> typeLabels = new ArrayList<>();
         for (WebElement typeLabel : typeElements) {
             String inputLabel = typeLabel.getText();
-                typeLabels.add(inputLabel);
+            typeLabels.add(inputLabel);
         }
         return typeLabels;
     }
@@ -108,12 +109,12 @@ public class LeaveRequestsPage extends BasePage {
     }
 
     public void chooseDefaultType(String defaultType) {
-            this.waitVisibilityOfElement(selectTypeField, ELEMENT_VISIBILITY_DELAY);
-            WebElement typeField = driver.findElement(selectTypeField);
-            typeField.click();
-            this.waitMillis(SHORT_WAIT);
-            this.selectType(defaultType).click();
-        }
+        this.waitVisibilityOfElement(selectTypeField, ELEMENT_VISIBILITY_DELAY);
+        WebElement typeField = driver.findElement(selectTypeField);
+        typeField.click();
+        this.waitMillis(SHORT_WAIT);
+        this.selectType(defaultType).click();
+    }
 
     public void clickOnTheLeaveRequestID() {
         this.waitVisibilityOfElement(firstLeaveRequestID, ELEMENT_VISIBILITY_DELAY);

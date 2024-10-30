@@ -1,4 +1,5 @@
 package Tests;
+
 import org.springframework.context.annotation.Configuration;
 
 import otai.configurations.DriverManager;
@@ -79,8 +80,8 @@ class CreateNewRequestTest {
     @Order(8)
     public void enterStartDateRequest() {
         createNewRequestPage.enterTheDate("startdate");
-        createNewRequestPage.entreMonthOrYear("selectMonth","Dec");
-        createNewRequestPage.entreMonthOrYear("selectYear","2024");
+        createNewRequestPage.entreMonthOrYear("selectMonth", "Dec");
+        createNewRequestPage.entreMonthOrYear("selectYear", "2024");
         createNewRequestPage.entreDataMonth("8");
     }
 
@@ -88,8 +89,8 @@ class CreateNewRequestTest {
     @Order(9)
     public void enterEndDateRequest() {
         createNewRequestPage.enterTheDate("enddate");
-        createNewRequestPage.entreMonthOrYear("selectMonth","Dec");
-        createNewRequestPage.entreMonthOrYear("selectYear","2024");
+        createNewRequestPage.entreMonthOrYear("selectMonth", "Dec");
+        createNewRequestPage.entreMonthOrYear("selectYear", "2024");
         createNewRequestPage.entreDataMonth("9");
         createNewRequestPage.clickOnStatusOperation("Cancel");
     }

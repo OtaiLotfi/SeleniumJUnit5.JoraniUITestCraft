@@ -6,10 +6,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.springframework.stereotype.Component;
 import otai.configurations.ElementFinder;
+
 @Component
 
-public class HRReportsPage  extends BasePage {
-    public HRReportsPage(WebDriver driver){
+public class HRReportsPage extends BasePage {
+    public HRReportsPage(WebDriver driver) {
         super(driver);
     }
 
