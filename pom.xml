@@ -123,7 +123,7 @@
                 </configuration>
             </plugin>
 
-            <!-- Maven Compiler Plugin for Lombok -->
+            <!-- Maven Compiler Plugin for Lombok (without specifying annotation processor) -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -131,9 +131,6 @@
                 <configuration>
                     <source>20</source>
                     <target>20</target>
-                    <annotationProcessors>
-                        <annotationProcessor>org.projectlombok.launch.AnnotationProcessorHider$AnnotationProcessor</annotationProcessor>
-                    </annotationProcessors>
                 </configuration>
             </plugin>
 
