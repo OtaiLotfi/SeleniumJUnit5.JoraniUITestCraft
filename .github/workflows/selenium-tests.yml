@@ -22,14 +22,14 @@ jobs:
       uses: actions/setup-java@v3
       with:
         distribution: 'temurin'  # Using Adoptium (Temurin) JDK
-        version: '20'
+        java-version: '20'  # Correct input for specifying the Java version
     
     # Step 3: Set up Maven
     - name: Set up Maven
       uses: actions/setup-java@v3
       with:
         distribution: 'temurin'
-        version: '20'
+        java-version: '20'  # Ensure both Java and Maven are using the same version
     
     # Step 4: Cache Maven dependencies
     - name: Cache Maven dependencies
