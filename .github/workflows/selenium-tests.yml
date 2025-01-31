@@ -3,10 +3,10 @@ name: Selenium Tests with JUnit 5
 on:
   push:
     branches:
-      - master
+      - main
   pull_request:
     branches:
-      - master
+      - main
 
 jobs:
   build:
@@ -44,6 +44,6 @@ jobs:
     - name: Build with Maven
       run: mvn clean install -DskipTests
 
-    # Step 6: Run the tests
+    # Step 6: Run the tests with debug logging
     - name: Run Selenium Tests
-      run: mvn test
+      run: mvn test -Dtest=YourMainClass -X
