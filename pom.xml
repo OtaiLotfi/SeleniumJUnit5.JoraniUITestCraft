@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?> 
+<?xml version="1.0" encoding="UTF-8"?>  
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -45,52 +45,35 @@
             <version>5.5.0</version>
         </dependency>
 
+        <!-- Spring Context Dependency -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
             <version>6.0.9</version> <!-- Use the latest stable version -->
         </dependency>
 
+        <!-- Logging Dependency (Logback) -->
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
             <version>1.4.11</version> <!-- Use the latest stable version -->
         </dependency>
 
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-api</artifactId>
-            <version>5.8.2</version>
-            <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-engine</artifactId>
-            <version>5.8.2</version>
-            <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
-        </dependency>
-
-        <!-- Spring Boot Starter Test for testing purposes -->
+        <!-- Spring Boot Starter for testing -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
 
-        <!-- Allure dependencies -->
+        <!-- Allure dependencies for reporting -->
         <dependency>
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-junit5</artifactId>
             <version>2.19.0</version>
         </dependency>
 
-        <!-- Lombok Dependency -->
+        <!-- Lombok Dependency for reducing boilerplate -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -101,25 +84,36 @@
 
     <build>
         <plugins>
+            <!-- Maven Surefire Plugin for running tests -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.1.0</version>
                 <configuration>
                     <includes>
-                        <include>**/*Test.java</include> <!-- Ensures all classes ending with Test are included -->
+                        <include>**/*Test.java</include> <!-- Ensure all classes ending with Test are included -->
                     </includes>
+                    <useModulePath>false</useModulePath> <!-- Disable module path for JUnit 5 compatibility -->
+                    <forkCount>1</forkCount> <!-- Ensure the tests run in a single JVM for simplicity -->
+                    <reuseForks>true</reuseForks> <!-- Reuse JVM between tests to save resources -->
                 </configuration>
             </plugin>
 
-            <!-- Allure Maven Plugin -->
+            <!-- Allure Maven Plugin for generating reports -->
             <plugin>
                 <groupId>io.qameta.allure</groupId>
                 <artifactId>allure-maven</artifactId>
                 <version>2.10.0</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>serve</goal> <!-- Run Allure report -->
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
 
-            <!-- Spring Boot Maven Plugin -->
+            <!-- Spring Boot Maven Plugin for packaging Spring Boot application -->
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
@@ -136,6 +130,13 @@
                 <configuration>
                     <source>20</source>
                     <target>20</target>
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                            <version>1.18.28</version>
+                        </path>
+                    </annotationProcessorPaths>
                 </configuration>
             </plugin>
 
