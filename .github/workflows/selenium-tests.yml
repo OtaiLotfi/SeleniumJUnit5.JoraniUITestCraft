@@ -44,6 +44,6 @@ jobs:
     - name: Build with Maven
       run: mvn clean install -DskipTests
 
-    # Step 6: Run the tests with debug logging
+    # Step 6: Run the tests with full class names
     - name: Run Selenium Tests
-      run: mvn test -Dtest=Tests.* -X
+      run: mvn test -Dtest=Tests.CreateNewRequestTest,Tests.HRListOfEmployeesTest,Tests.HRReportsTest,Tests.LeaveRequestsTest
