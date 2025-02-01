@@ -32,7 +32,13 @@
         <!-- JUnit 5 API and Engine -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter</artifactId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.10.0</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
             <version>5.10.0</version>
             <scope>test</scope>
         </dependency>
@@ -99,7 +105,7 @@
                     <includes>
                         <include>**/*Test.java</include> <!-- Ensure all classes ending with Test are included -->
                     </includes>
-                    <useModulePath>false</useModulePath> <!-- Disable module path for JUnit 5 compatibility -->
+                    <useJUnitPlatform>true</useJUnitPlatform> <!-- Ensure JUnit 5 is used -->
                     <forkCount>1</forkCount> <!-- Ensure the tests run in a single JVM for simplicity -->
                     <reuseForks>true</reuseForks> <!-- Reuse JVM between tests to save resources -->
                 </configuration>
