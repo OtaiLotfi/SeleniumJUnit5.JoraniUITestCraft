@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>  
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -103,7 +103,7 @@
                 <version>3.1.0</version>
                 <configuration>
                     <includes>
-                        <include>**/Tests/*Test.java</include> <!-- Specify the Tests package -->
+                        <include>**/Tests/*Test.java</include> <!-- Ensure it matches all test files in the Tests package -->
                     </includes>
                     <useJUnitPlatform>true</useJUnitPlatform> <!-- Ensure JUnit 5 is used -->
                     <forkCount>1</forkCount> <!-- Ensure the tests run in a single JVM for simplicity -->
