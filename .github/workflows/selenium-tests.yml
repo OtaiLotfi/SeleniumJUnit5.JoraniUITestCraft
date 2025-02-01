@@ -46,4 +46,4 @@ jobs:
 
     # Step 6: Run the tests with debug logging
     - name: Run Selenium Tests
-      run: mvn test -Dtest=YourMainClass -X
+      run: mvn test -Dtest=Tests.* -X
