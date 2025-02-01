@@ -11,12 +11,12 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.1.0</version> <!-- Use your desired Spring Boot version -->
-        <relativePath/> <!-- lookup parent from repository -->
+        <version>3.1.0</version>
+        <relativePath/>
     </parent>
 
     <properties>
-        <maven.compiler.source>17</maven.compiler.source> <!-- Consider using Java 17 for better stability -->
+        <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
@@ -60,14 +60,14 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
-            <version>6.0.9</version> <!-- Use the latest stable version -->
+            <version>6.0.9</version>
         </dependency>
 
         <!-- Logging Dependency (Logback) -->
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
-            <version>1.4.11</version> <!-- Use the latest stable version -->
+            <version>1.4.11</version>
         </dependency>
 
         <!-- Spring Boot Starter for testing -->
@@ -88,7 +88,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.28</version> <!-- Ensure this version is compatible with your Java version -->
+            <version>1.18.28</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
@@ -101,13 +101,16 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.1.0</version>
                 <configuration>
-                    <!-- Run all tests in the Tests package -->
+                    <!-- Ensure proper test discovery -->
                     <includes>
                         <include>**/Tests/*Test.java</include> <!-- Ensure it matches all test files in the Tests package -->
                     </includes>
                     <useJUnitPlatform>true</useJUnitPlatform> <!-- Ensure JUnit 5 is used -->
-                    <forkCount>1</forkCount> <!-- Ensure the tests run in a single JVM for simplicity -->
+                    <forkCount>1</forkCount> <!-- Run tests in a single JVM for simplicity -->
                     <reuseForks>true</reuseForks> <!-- Reuse JVM between tests to save resources -->
+                    <testFailureIgnore>false</testFailureIgnore> <!-- Fail on test errors/failures -->
+                    <parallel>methods</parallel> <!-- Run tests in parallel (optional) -->
+                    <threadCount>4</threadCount> <!-- Adjust thread count based on your environment -->
                 </configuration>
             </plugin>
 
@@ -151,7 +154,6 @@
                     </annotationProcessorPaths>
                 </configuration>
             </plugin>
-
         </plugins>
     </build>
 </project>
